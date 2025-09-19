@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Full stack project by Mohit
+{% endblock %} 
+
+{% block content%}
+<h1 class="text-center mt-4">Welcome to Mohit Django Project</h1>
+
+<a class= "btn btn-primary mb-4" href="{% url 'tweet-create' %}">Create Tweet</a>
+<div class="container row gap-3">
+
+    {% for i in tweets%}
+    <div class="card" style="width: 18rem;">
+  <img src="{{i.photo.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.user.username}}</h5>
+    <p class="card-text">{{i.text}}</p>
+    <a href="{% url 'tweet-edit' i.id %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'tweet-delete' i.id %}" class="btn btn-danger">Delete</a>
+  </div>
+</div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock%}
