@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_6s=n^xxdi#(gn16o8w@ew0o-ltc809j8+*b)m9$2rnh7d@cdo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -127,3 +127,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/tweet/'
+
+LOGOUT_REDIRECT_URL = '/tweet/'

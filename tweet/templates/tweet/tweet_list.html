@@ -16,8 +16,10 @@ Full stack project by Mohit
   <div class="card-body">
     <h5 class="card-title">{{i.user.username}}</h5>
     <p class="card-text">{{i.text}}</p>
+    {% if i.user == user %}
     <a href="{% url 'tweet-edit' i.id %}" class="btn btn-primary">Edit</a>
     <a href="{% url 'tweet-delete' i.id %}" class="btn btn-danger">Delete</a>
+    {% endif %}
   </div>
 </div>
 
